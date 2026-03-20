@@ -7,6 +7,7 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
+const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/users");
 const truckRoutes = require("./routes/trucks");
 
@@ -41,7 +42,7 @@ app.get("/planets/:id", async (req, res) => {
 });
 
 app.use("/users", userRoutes);
-// app.use('/auth', authRoutes)
+app.use("/auth", authRoutes);
 app.use("/trucks", truckRoutes);
 // app.use('/planets', planetRoutes)
 
