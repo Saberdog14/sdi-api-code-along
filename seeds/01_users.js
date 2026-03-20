@@ -14,8 +14,8 @@ const createUsers = async (num) => {
       password: hashWord,
       role: "user",
     });
-    return temp;
   }
+  return temp;
 };
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
@@ -30,6 +30,6 @@ exports.seed = async function (knex) {
     //   password: hashWord,
     //   role: "user",
     // })),
-    ...(await createUsers(10)),
+    ...await createUsers(10),
   ]);
 };
